@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== RESET ===== */
 *{
   margin:0;
   padding:0;
@@ -18,53 +17,28 @@
 
 body{
   background:#0b1c2d;
-  color:#fff;
+  color:#ffffff;
   position:relative;
 }
 
-/* ===== LOGO BACKGROUND ===== */
+/* ===== BACKGROUND LOGO ===== */
 body::before{
   content:"";
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:url("logo.png") no-repeat center center;
-  background-size:contain; /* FULL VISIBILITY */
-  opacity:0.12;           /* DOES NOT BLOCK TEXT */
+  background-size:contain;
+  opacity:0.10;
   z-index:-1;
-  pointer-events:none;
-}
-
-/* ===== GLOBAL LAYOUT ===== */
-section{
-  padding:80px 10%;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-h1,h2,h3{
-  margin-bottom:16px;
-}
-
-p{
-  opacity:0.9;
-  line-height:1.6;
-}
-
-.container{
-  max-width:1200px;
-  margin:auto;
 }
 
 /* ===== HEADER ===== */
 header{
-  padding:25px 10%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(11,28,45,0.85);
-  backdrop-filter:blur(4px);
+  padding:22px 10%;
+  background:rgba(11,28,45,0.9);
 }
 
 header h1{
@@ -75,13 +49,33 @@ header h1{
 nav a{
   color:#fff;
   text-decoration:none;
-  margin-left:25px;
+  margin-left:22px;
   font-weight:500;
-  opacity:0.9;
+  opacity:0.85;
 }
 
-nav a:hover{
-  opacity:1;
+nav a:hover{opacity:1}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:90px 10%;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  font-size:34px;
+  margin-bottom:18px;
+}
+
+p{
+  max-width:900px;
+  opacity:0.9;
+  line-height:1.7;
 }
 
 /* ===== HERO ===== */
@@ -91,34 +85,40 @@ nav a:hover{
   align-items:center;
 }
 
-.hero h1{
+.hero h2{
   font-size:48px;
   max-width:700px;
 }
 
-.hero p{
-  margin-top:15px;
-  max-width:600px;
-}
-
-/* ===== CARD GRID ===== */
+/* ===== GRID ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+  gap:28px;
+  margin-top:40px;
 }
 
 .card{
   background:rgba(255,255,255,0.06);
-  padding:25px;
-  border-radius:12px;
+  padding:28px;
+  border-radius:14px;
+}
+
+/* ===== TEAM ===== */
+.team-card h3{
+  margin-bottom:6px;
+}
+
+.team-card span{
+  font-size:14px;
+  opacity:0.75;
 }
 
 /* ===== FOOTER ===== */
 footer{
-  padding:40px 10%;
+  padding:45px 10%;
   text-align:center;
-  background:rgba(11,28,45,0.9);
+  background:rgba(11,28,45,0.95);
   opacity:0.85;
 }
 </style>
@@ -126,132 +126,144 @@ footer{
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <header>
-  <h1>MTP Marine Services</h1>
+  <h1>0</h1>
   <nav>
-    <a href="#s1">Home</a>
-    <a href="#s4">ERP</a>
-    <a href="#s8">Fleet</a>
-    <a href="#s11">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<!-- ===== SECTION 1 ===== -->
-<section id="s1" class="hero">
+<!-- 1 HOME -->
+<section id="home" class="hero">
   <div class="container">
-    <h1>Integrated ERP, Fleet & Financial Intelligence Platform</h1>
+    <h2>Marine & Construction Services Built on Experience and Integrity</h2>
     <p>
-      One system. Full visibility. Real-time cost, project, and fleet control for marine and construction operations.
+      Delivering reliable marine, fleet, and project support services with a commitment to safety, quality, and operational excellence.
     </p>
   </div>
 </section>
 
-<!-- ===== SECTION 2 ===== -->
-<section id="s2">
+<!-- 2 ABOUT -->
+<section>
   <div class="container">
-    <h2>Company Overview</h2>
-    <p>MTP Marine Services operates with precision-driven systems for cost, fleet, and operational excellence.</p>
+    <h2>About Us</h2>
+    <p>
+      MTP Marine Services is a Philippine-based company providing marine, logistics, and support services for coastal, industrial, and construction operations.
+    </p>
   </div>
 </section>
 
-<!-- ===== SECTION 3 ===== -->
-<section id="s3">
+<!-- 3 MISSION & VISION -->
+<section>
   <div class="container grid">
     <div class="card">
-      <h3>Mission</h3>
-      <p>Deliver transparent, data-driven operations.</p>
+      <h3>Our Mission</h3>
+      <p>To deliver dependable marine and construction support services with professionalism and accountability.</p>
     </div>
     <div class="card">
-      <h3>Vision</h3>
-      <p>Be the benchmark in integrated marine ERP systems.</p>
+      <h3>Our Vision</h3>
+      <p>To be a trusted partner in marine and infrastructure projects nationwide.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== SECTION 4 ===== -->
-<section id="s4">
+<!-- 4 CORE SERVICES -->
+<section id="services">
   <div class="container">
-    <h2>ERP Core System</h2>
-    <p>Project costing, approvals, audit trail, and real-time dashboards.</p>
+    <h2>Core Services</h2>
+    <p>Integrated marine, fleet, and project support services tailored to client needs.</p>
   </div>
 </section>
 
-<!-- ===== SECTION 5 ===== -->
-<section id="s5">
+<!-- 5 MARINE SERVICES -->
+<section>
   <div class="container grid">
     <div class="card">
-      <h3>Project Monitoring</h3>
-      <p>Budget vs actual tracking in real time.</p>
+      <h3>Marine Operations</h3>
+      <p>Barge handling, tug assistance, and coastal support services.</p>
     </div>
     <div class="card">
-      <h3>Expense Control</h3>
-      <p>Invoice-level precision and approvals.</p>
+      <h3>Port & Harbor Support</h3>
+      <p>Operational assistance for port and near-shore activities.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== SECTION 6 ===== -->
-<section id="s6">
+<!-- 6 FLEET -->
+<section>
   <div class="container">
-    <h2>Financial Management</h2>
-    <p>Tax, non-tax, liquidation, and audit-ready records.</p>
+    <h2>Fleet & Equipment</h2>
+    <p>
+      Maintained vessels, vehicles, and equipment operated by trained and certified personnel.
+    </p>
   </div>
 </section>
 
-<!-- ===== SECTION 7 ===== -->
-<section id="s7">
-  <div class="container grid">
-    <div class="card">
-      <h3>Cash Flow</h3>
-      <p>Real-time visibility on inflow and outflow.</p>
-    </div>
-    <div class="card">
-      <h3>Budget Forecasting</h3>
-      <p>Bid-ready and execution-ready projections.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 8 ===== -->
-<section id="s8">
+<!-- 7 PROJECTS -->
+<section>
   <div class="container">
-    <h2>Fleet Management</h2>
-    <p>GPS-based trip allocation, geofencing, and cost attribution.</p>
+    <h2>Projects & Experience</h2>
+    <p>
+      Proven track record in supporting marine construction, logistics, and industrial projects.
+    </p>
   </div>
 </section>
 
-<!-- ===== SECTION 9 ===== -->
-<section id="s9">
-  <div class="container grid">
-    <div class="card">
-      <h3>Fuel Analytics</h3>
-      <p>Automated fuel and usage tracking.</p>
-    </div>
-    <div class="card">
-      <h3>Driver Accountability</h3>
-      <p>After-hours and exception-based charging.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 10 ===== -->
-<section id="s10">
+<!-- 8 OUR TEAM -->
+<section id="team">
   <div class="container">
-    <h2>Reports & Oversight</h2>
-    <p>CEO, Manager, and Auditor-ready reporting structure.</p>
+    <h2>Our Team</h2>
+    <div class="grid">
+      <div class="card team-card">
+        <h3>Operations Manager</h3>
+        <span>Marine Operations</span>
+      </div>
+      <div class="card team-card">
+        <h3>Fleet Supervisor</h3>
+        <span>Fleet & Equipment</span>
+      </div>
+      <div class="card team-card">
+        <h3>Safety Officer</h3>
+        <span>Compliance & Safety</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== SECTION 11 ===== -->
-<section id="s11">
+<!-- 9 SAFETY -->
+<section>
   <div class="container">
-    <h2>Contact & Deployment</h2>
-    <p>Cloud-ready, LAN-capable, scalable ERP platform.</p>
+    <h2>Safety & Compliance</h2>
+    <p>
+      Safety-first operations aligned with maritime and construction regulations.
+    </p>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- 10 CAREERS -->
+<section>
+  <div class="container">
+    <h2>Careers</h2>
+    <p>
+      Join a growing team committed to professionalism, safety, and excellence.
+    </p>
+  </div>
+</section>
+
+<!-- 11 CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>
+      Brgy. New Danglayan, Bauan, Batangas, Philippines<br>
+      Email: info@mtpmarineservices.com
+    </p>
+  </div>
+</section>
+
 <footer>
   © 2026 MTP Marine Services. All rights reserved.
 </footer>
