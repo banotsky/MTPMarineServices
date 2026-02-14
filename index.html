@@ -14,33 +14,35 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    background: url("assets/your-logo.png") no-repeat center center fixed;
+    background: url("logo.jpg") no-repeat center center fixed;
     background-size: cover;
     color:white;
 }
 
+/* Overlay */
 .overlay{
-    background: rgba(0,0,20,0.75);
+    background: rgba(0,0,30,0.82);
     width:100%;
-    min-height:100vh;
 }
 
-/* NAVIGATION */
-
+/* Navbar */
 nav{
     position:fixed;
     top:0;
     width:100%;
     padding:20px 60px;
-    background:rgba(0,0,40,0.85);
-    backdrop-filter: blur(10px);
     display:flex;
     justify-content:space-between;
     align-items:center;
+    background:rgba(0,0,40,0.90);
+    backdrop-filter:blur(8px);
     z-index:1000;
 }
 
@@ -52,7 +54,7 @@ nav h2{
 nav ul{
     list-style:none;
     display:flex;
-    gap:30px;
+    gap:25px;
 }
 
 nav ul li a{
@@ -65,8 +67,7 @@ nav ul li a:hover{
     color:#00bfff;
 }
 
-/* HERO */
-
+/* Hero */
 .hero{
     height:100vh;
     display:flex;
@@ -78,47 +79,44 @@ nav ul li a:hover{
 }
 
 .hero h1{
-    font-size:52px;
-    font-weight:700;
+    font-size:58px;
 }
 
 .hero p{
     margin-top:20px;
-    max-width:700px;
-    font-size:18px;
+    max-width:800px;
+    font-size:20px;
 }
 
-/* SECTIONS */
-
+/* Sections */
 .section{
-    padding:120px 20px;
+    padding:140px 20px 100px 20px;
     text-align:center;
 }
 
 .section h2{
     font-size:36px;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .section p{
     max-width:900px;
     margin:auto;
-    line-height:1.7;
+    line-height:1.8;
 }
 
-.box{
+.card{
     background: rgba(255,255,255,0.08);
-    padding:40px;
-    border-radius:12px;
+    padding:50px;
+    border-radius:14px;
     backdrop-filter: blur(6px);
 }
 
-/* FOOTER */
-
+/* Footer */
 footer{
+    background:rgba(0,0,40,0.95);
     padding:40px;
     text-align:center;
-    background:rgba(0,0,40,0.9);
 }
 
 </style>
@@ -132,144 +130,145 @@ footer{
     <h2>MTP Marine</h2>
     <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#why">Why Us</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#erp">ERP</a></li>
-        <li><a href="#fleet">Fleet</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- SECTION 1 -->
+<!-- HERO -->
 <section class="hero">
     <h1>MTP Marine Services</h1>
-    <p>Integrated Marine Engineering, Fleet Operations, and ERP-Driven Project Management</p>
+    <p>
+        Marine Engineering • Industrial Fabrication •
+        Fleet Operations • Structured Project Monitoring
+    </p>
 </section>
 
-<!-- SECTION 2 -->
+<!-- 1 ABOUT -->
 <section class="section" id="about">
-    <div class="box">
-        <h2>1. Corporate Overview</h2>
+    <div class="card">
+        <h2>1. About Us</h2>
         <p>
-        Located in Brgy. New Danglayan, Bauan, Batangas, MTP Marine Services
-        delivers engineering, fabrication, marine repair, and fleet-managed
-        project execution supported by an integrated ERP system.
+        MTP Marine Services is based in Bauan, Batangas,
+        providing engineering, ship repair, fabrication,
+        and project-based industrial services.
         </p>
     </div>
 </section>
 
-<!-- SECTION 3 -->
-<section class="section">
-    <div class="box">
-        <h2>2. Mission & Vision</h2>
+<!-- 2 WHY US -->
+<section class="section" id="why">
+    <div class="card">
+        <h2>2. Why Choose Us</h2>
         <p>
-        To provide reliable marine and industrial services powered by
-        real-time financial monitoring, fleet automation, and data-driven decisions.
+        Strong operational discipline, structured cost monitoring,
+        fleet management oversight, and commitment to project efficiency.
         </p>
     </div>
 </section>
 
-<!-- SECTION 4 -->
+<!-- 3 SERVICES -->
 <section class="section" id="services">
-    <div class="box">
+    <div class="card">
         <h2>3. Core Services</h2>
         <p>
-        Ship Repair • Mechanical Works • Fabrication • Industrial Projects •
-        Fleet Logistics • Supplier Coordination
+        Ship Repair • Mechanical Works • Fabrication •
+        Industrial Installations • Marine Engineering
         </p>
     </div>
 </section>
 
-<!-- SECTION 5 -->
+<!-- 4 PROJECT MANAGEMENT -->
 <section class="section">
-    <div class="box">
-        <h2>4. Project Management System</h2>
+    <div class="card">
+        <h2>4. Project Management</h2>
         <p>
-        Full budget allocation, expense tracking per invoice, CEO/Manager oversight,
-        and real-time project profitability monitoring.
+        Budget allocation, expense tracking per invoice,
+        profitability monitoring, and cost visibility.
         </p>
     </div>
 </section>
 
-<!-- SECTION 6 -->
+<!-- 5 FINANCIAL -->
 <section class="section">
-    <div class="box">
-        <h2>5. Financial Monitoring</h2>
+    <div class="card">
+        <h2>5. Financial Control</h2>
         <p>
-        Invoice-based expense recording, tax/non-tax classification,
-        quantity/unit price tracking, and automatic budget summaries.
+        Invoice-based expense entry, quantity & unit price monitoring,
+        and budget summary tracking.
         </p>
     </div>
 </section>
 
-<!-- SECTION 7 -->
-<section class="section" id="fleet">
-    <div class="box">
-        <h2>6. Fleet Management Division</h2>
-        <p>
-        GPS live tracking, geofence-based auto charging, after-hours driver charging,
-        project/supplier classification, and audit logging.
-        </p>
-    </div>
-</section>
-
-<!-- SECTION 8 -->
+<!-- 6 FLEET -->
 <section class="section">
-    <div class="box">
-        <h2>7. Bidding & Cost Estimation</h2>
+    <div class="card">
+        <h2>6. Fleet Division</h2>
         <p>
-        Historical usage analytics, material consumption forecasting,
-        labor tracking, and profitability simulation for future tenders.
+        Vehicle allocation, fuel usage tracking,
+        supplier visit monitoring, and operational logging.
         </p>
     </div>
 </section>
 
-<!-- SECTION 9 -->
+<!-- 7 BIDDING -->
 <section class="section">
-    <div class="box">
-        <h2>8. Role-Based ERP Access</h2>
+    <div class="card">
+        <h2>7. Bidding Support</h2>
         <p>
-        CEO Dashboard • Manager Controls • Expediter Expense Control •
-        Controlled editing with full audit trail.
+        Historical cost reference, material estimation,
+        labor forecasting, and profitability planning.
         </p>
     </div>
 </section>
 
-<!-- SECTION 10 -->
+<!-- 8 ORGANIZATION -->
 <section class="section">
-    <div class="box">
-        <h2>9. Automation & Controls</h2>
+    <div class="card">
+        <h2>8. Organizational Roles</h2>
         <p>
-        Auto budget computation, supplier visit tagging,
-        working hours rule (7AM–6PM), emergency override approval workflow.
+        Executive oversight, managerial controls,
+        and structured operational accountability.
         </p>
     </div>
 </section>
 
-<!-- SECTION 11 -->
+<!-- 9 CONTROLS -->
 <section class="section">
-    <div class="box">
-        <h2>10. Data & Cloud Infrastructure</h2>
+    <div class="card">
+        <h2>9. Operational Controls</h2>
         <p>
-        Supabase-powered cloud database integration with secure login,
-        real-time synchronization, and scalable storage architecture.
+        Work-hour discipline, approval workflows,
+        and project-based classification.
         </p>
     </div>
 </section>
 
-<!-- SECTION 12 -->
+<!-- 10 DIGITAL -->
+<section class="section">
+    <div class="card">
+        <h2>10. Digital Monitoring</h2>
+        <p>
+        Web-based monitoring framework designed for
+        executive transparency and operational clarity.
+        </p>
+    </div>
+</section>
+
+<!-- 11 CONTACT -->
 <section class="section" id="contact">
-    <div class="box">
-        <h2>11. Contact & Location</h2>
+    <div class="card">
+        <h2>11. Contact</h2>
         <p>
-        MTP Marine Services<br>
-        Brgy. New Danglayan, Bauan, Batangas, Philippines<br>
-        Email: info@mtpmarine.com
+        Brgy. New Danglayan, Bauan, Batangas<br>
+        Philippines
         </p>
     </div>
 </section>
 
 <footer>
-© 2026 MTP Marine Services. All Rights Reserved.
+© 2026 MTP Marine Services
 </footer>
 
 </div>
