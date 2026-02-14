@@ -8,156 +8,205 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --royal:#0b3c5d;
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
+  font-family:'Poppins',sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  color:#ffffff;
-  position:relative;
-  height:100vh;
-  overflow-y:scroll;
+html,body{
   scroll-snap-type:y mandatory;
+  overflow-y:scroll;
 }
 
-/* ===== FULL BACKGROUND LOGO ===== */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("logo.png") no-repeat center center;
-  background-size:cover;     /* 🔥 FULL SCREEN, NO GAPS */
-  opacity:0.18;              /* readable but visible */
-  z-index:-1;
-}
-
-/* ===== HEADER ===== */
+/* ===== HEADER (LOCKED) ===== */
 header{
   position:fixed;
   top:0;
-  left:0;
   width:100%;
-  z-index:10;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 10%;
-  background:rgba(0,0,0,0.45); /* transparent dark only */
-  backdrop-filter:blur(4px);
+  background:var(--royal);
+  z-index:1000;
 }
 
-header h1{
-  font-size:22px;
-  font-weight:600;
+nav{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:10px;
+  padding:15px 30px;
+  text-align:center;
 }
 
 nav a{
-  color:#fff;
+  color:white;
   text-decoration:none;
-  margin-left:22px;
+  font-size:14px;
   font-weight:500;
-  opacity:0.85;
 }
-
-nav a:hover{opacity:1}
 
 /* ===== SECTIONS ===== */
 section{
-  height:100vh;
+  min-height:100vh;
   scroll-snap-align:start;
-  padding:110px 10% 80px;
   display:flex;
-  align-items:center;
-  border-bottom:1px solid rgba(255,255,255,0.08);
+  justify-content:center;
+  padding:120px 8% 60px;
 }
 
-.container{
+.section-inner{
   max-width:1200px;
+  width:100%;
+  text-align:center;
 }
 
-/* ===== TEXT ===== */
-h2{
-  font-size:42px;
-  margin-bottom:16px;
-}
+/* Colors */
+.white{ background:white; color:var(--royal); }
+.blue{ background:var(--royal); color:white; }
 
-p{
-  max-width:900px;
-  opacity:0.95;
-  line-height:1.7;
+/* ===== LARGE TEXT ===== */
+section h1{ font-size:78px; }
+section h2{ font-size:60px; }
+section p{
+  font-size:28px;
+  line-height:2.3;
+  max-width:1100px;
+  margin:40px auto;
 }
 
 /* ===== HERO ===== */
-.hero h2{
-  font-size:46px;
-  max-width:720px;
+.hero-media{
+  margin-top:50px;
+  height:420px;
+  background:#e0e0e0;
+  border:3px dashed #999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:600;
+  color:#555;
 }
 
-/* ===== HERO VIDEO ===== */
-.hero-video{
-  margin-top:30px;
-  max-width:900px;
-}
-
-.hero-video iframe,
-.hero-video video{
-  width:100%;
-  border-radius:14px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.6);
-}
-
-/* ===== GRID ===== */
-.grid{
+/* ===== SERVICES GRID ===== */
+.services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-  margin-top:40px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  margin-top:60px;
 }
 
-.card{
-  background:rgba(0,0,0,0.35);
-  padding:28px;
-  border-radius:14px;
-  backdrop-filter:blur(6px);
+.service-box{
+  font-size:28px;
+  padding:55px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s ease;
 }
 
-/* ===== TEAM ===== */
-.team-card span{
-  font-size:14px;
-  opacity:0.8;
+.service-box.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  section{
-    padding:95px 8% 60px;
-  }
+.white .service-box{
+  background:#f4f6f8;
+  color:var(--royal);
+}
 
-  h2{
-    font-size:30px;
-  }
+.blue .service-box{
+  background:rgba(255,255,255,0.15);
+  color:white;
+}
 
-  .hero h2{
-    font-size:32px;
-  }
+/* ===== SERVICE DETAIL IMAGES ===== */
+.service-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  margin-top:70px;
+}
+
+.null-image{
+  height:320px;
+  background:#e0e0e0;
+  border:3px dashed #999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  font-weight:600;
+  color:#555;
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .9s ease;
+}
+
+.null-image.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== CERTIFICATES ===== */
+.certificates{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:40px;
+  margin-top:60px;
+}
+
+.cert{
+  height:110px;
+  background:#ddd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:600;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .8s ease;
+}
+
+.cert.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== SECTION FADE ===== */
+.fade-section{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+
+.fade-section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* ===== FOOTER ===== */
 footer{
-  height:100vh;
-  scroll-snap-align:start;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:white;
   text-align:center;
-  background:rgba(0,0,0,0.55);
+  padding:30px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  nav{ grid-template-columns:repeat(3,1fr); }
+  section h1{ font-size:46px; }
+  section h2{ font-size:36px; }
+  section p{ font-size:22px; }
+  .hero-media{ height:260px; }
+  .service-images{ grid-template-columns:1fr; }
+  .null-image{ height:220px; }
 }
 </style>
 </head>
@@ -165,154 +214,118 @@ footer{
 <body>
 
 <header>
-  <h1>MTP Marine Services</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+<a href="#hero">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#marine">Marine</a>
+<a href="#civil">Civil</a>
+<a href="#mechanical">Mechanical</a>
+<a href="#electrical">Electrical</a>
+<a href="#hvac">HVAC</a>
+<a href="#rigging">Rigging</a>
+<a href="#fabrication">Fabrication</a>
+<a href="#certs">Certificates</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<!-- 1 HERO -->
-<section id="home" class="hero">
-  <div class="container">
-    <h2>Marine & Construction Services Built on Experience and Integrity</h2>
-    <p>
-      Delivering reliable marine, logistics, and project support services with a commitment to safety, quality, and operational excellence.
-    </p>
-
-    <div class="hero-video">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+<section id="hero" class="white fade-section">
+<div class="section-inner">
+<h1>MTP Marine Services</h1>
+<p>Integrated Marine and Industrial Solutions</p>
+<div class="hero-media">VIDEO PLACEHOLDER</div>
+</div>
 </section>
 
-<!-- 2 ABOUT -->
-<section>
-  <div class="container">
-    <h2>About Us</h2>
-    <p>
-      MTP Marine Services is a Philippine-based company providing marine, logistics, and support services for coastal, industrial, and construction operations.
-    </p>
-  </div>
+<section id="about" class="blue fade-section">
+<div class="section-inner">
+<h2>About Us</h2>
+<p>
+MTP Marine Services delivers reliable marine, industrial, and engineering solutions
+supporting onshore and offshore projects with strict safety compliance.
+</p>
+</div>
 </section>
 
-<!-- 3 MISSION & VISION -->
-<section>
-  <div class="container grid">
-    <div class="card">
-      <h3>Our Mission</h3>
-      <p>To deliver dependable marine and construction support services with professionalism and accountability.</p>
-    </div>
-    <div class="card">
-      <h3>Our Vision</h3>
-      <p>To be a trusted partner in marine and infrastructure projects nationwide.</p>
-    </div>
-  </div>
+<section id="services" class="white fade-section">
+<div class="section-inner">
+<h2>Our Services</h2>
+<div class="services">
+<a href="#marine" class="service-box">Marine Works</a>
+<a href="#civil" class="service-box">Civil Works</a>
+<a href="#mechanical" class="service-box">Mechanical Works</a>
+<a href="#electrical" class="service-box">Electrical Works</a>
+<a href="#hvac" class="service-box">HVAC Systems</a>
+<a href="#rigging" class="service-box">Rigging & Lifting</a>
+<a href="#fabrication" class="service-box">Fabrication Works</a>
+<a href="#logistics" class="service-box">Land & Sea Logistics</a>
+</div>
+</div>
 </section>
 
-<!-- 4 CORE SERVICES -->
-<section id="services">
-  <div class="container">
-    <h2>Core Services</h2>
-    <p>Integrated marine, fleet, and project support services tailored to client needs.</p>
-  </div>
+<!-- SERVICE TEMPLATE -->
+<section id="marine" class="blue fade-section">
+<div class="section-inner">
+<h2>Marine Works</h2>
+<p>Comprehensive marine construction, vessel support, offshore logistics, and port assistance.</p>
+<div class="service-images">
+<div class="null-image">IMAGE</div>
+<div class="null-image">IMAGE</div>
+</div>
+</div>
 </section>
 
-<!-- 5 MARINE SERVICES -->
-<section>
-  <div class="container grid">
-    <div class="card">
-      <h3>Marine Operations</h3>
-      <p>Barge handling, tug assistance, and coastal support services.</p>
-    </div>
-    <div class="card">
-      <h3>Port & Harbor Support</h3>
-      <p>Operational assistance for port and near-shore activities.</p>
-    </div>
-  </div>
+<section id="civil" class="white fade-section">
+<div class="section-inner">
+<h2>Civil Works</h2>
+<p>Structural foundations, site development, and infrastructure construction.</p>
+<div class="service-images">
+<div class="null-image">IMAGE</div>
+<div class="null-image">IMAGE</div>
+</div>
+</div>
 </section>
 
-<!-- 6 FLEET -->
-<section>
-  <div class="container">
-    <h2>Fleet & Equipment</h2>
-    <p>
-      Maintained vessels, vehicles, and equipment operated by trained and certified personnel.
-    </p>
-  </div>
+<section id="certs" class="white fade-section">
+<div class="section-inner">
+<h2>Certifications & Compliance</h2>
+<div class="certificates">
+<div class="cert">DOLE</div>
+<div class="cert">TESDA NC II</div>
+<div class="cert">Safety</div>
+<div class="cert">ISO</div>
+</div>
+</div>
 </section>
 
-<!-- 7 PROJECTS -->
-<section>
-  <div class="container">
-    <h2>Projects & Experience</h2>
-    <p>
-      Proven track record in supporting marine construction, logistics, and industrial projects.
-    </p>
-  </div>
-</section>
-
-<!-- 8 TEAM -->
-<section id="team">
-  <div class="container">
-    <h2>Our Team</h2>
-    <div class="grid">
-      <div class="card team-card">
-        <h3>Operations Manager</h3>
-        <span>Marine Operations</span>
-      </div>
-      <div class="card team-card">
-        <h3>Fleet Supervisor</h3>
-        <span>Fleet & Equipment</span>
-      </div>
-      <div class="card team-card">
-        <h3>Safety Officer</h3>
-        <span>Compliance & Safety</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 9 SAFETY -->
-<section>
-  <div class="container">
-    <h2>Safety & Compliance</h2>
-    <p>
-      Safety-first operations aligned with maritime and construction regulations.
-    </p>
-  </div>
-</section>
-
-<!-- 10 CAREERS -->
-<section>
-  <div class="container">
-    <h2>Careers</h2>
-    <p>
-      Join a growing team committed to professionalism, safety, and excellence.
-    </p>
-  </div>
-</section>
-
-<!-- 11 CONTACT -->
-<section id="contact">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <p>
-      Brgy. New Danglayan, Bauan, Batangas, Philippines<br>
-      Email: info@mtpmarineservices.com
-    </p>
-  </div>
+<section id="contact" class="blue fade-section">
+<div class="section-inner">
+<h2>Contact Us</h2>
+<p>
+Brgy. New Danglayan, Bauan, Batangas<br>
+Email: info@mtpmarineservices.com
+</p>
+</div>
 </section>
 
 <footer>
-  © 2026 MTP Marine Services. All rights reserved.
+© 2026 MTP Marine Services. All Rights Reserved.
 </footer>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{ threshold:0.2 });
+
+document.querySelectorAll(
+  ".fade-section, .service-box, .null-image, .cert"
+).forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
