@@ -20,22 +20,21 @@ html{
 }
 
 body{
-  background:#0b1c2d;
   color:#ffffff;
   position:relative;
   height:100vh;
   overflow-y:scroll;
-  scroll-snap-type:y mandatory; /* 🔥 KEY LINE */
+  scroll-snap-type:y mandatory;
 }
 
-/* ===== BACKGROUND LOGO ===== */
+/* ===== FULL BACKGROUND LOGO ===== */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:url("logo.png") no-repeat center center;
-  background-size:contain;
-  opacity:0.10;
+  background-size:cover;     /* 🔥 FULL SCREEN, NO GAPS */
+  opacity:0.18;              /* readable but visible */
   z-index:-1;
 }
 
@@ -50,7 +49,8 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:18px 10%;
-  background:rgba(11,28,45,0.92);
+  background:rgba(0,0,0,0.45); /* transparent dark only */
+  backdrop-filter:blur(4px);
 }
 
 header h1{
@@ -70,9 +70,9 @@ nav a:hover{opacity:1}
 
 /* ===== SECTIONS ===== */
 section{
-  height:100vh;                 /* ONE SCREEN */
-  scroll-snap-align:start;      /* SNAP POINT */
-  padding:110px 10% 80px;       /* header offset */
+  height:100vh;
+  scroll-snap-align:start;
+  padding:110px 10% 80px;
   display:flex;
   align-items:center;
   border-bottom:1px solid rgba(255,255,255,0.08);
@@ -90,7 +90,7 @@ h2{
 
 p{
   max-width:900px;
-  opacity:0.9;
+  opacity:0.95;
   line-height:1.7;
 }
 
@@ -110,7 +110,7 @@ p{
 .hero-video video{
   width:100%;
   border-radius:14px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.45);
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
 }
 
 /* ===== GRID ===== */
@@ -122,15 +122,16 @@ p{
 }
 
 .card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(0,0,0,0.35);
   padding:28px;
   border-radius:14px;
+  backdrop-filter:blur(6px);
 }
 
 /* ===== TEAM ===== */
 .team-card span{
   font-size:14px;
-  opacity:0.75;
+  opacity:0.8;
 }
 
 /* ===== MOBILE ===== */
@@ -156,8 +157,7 @@ footer{
   align-items:center;
   justify-content:center;
   text-align:center;
-  background:rgba(11,28,45,0.95);
-  opacity:0.9;
+  background:rgba(0,0,0,0.55);
 }
 </style>
 </head>
