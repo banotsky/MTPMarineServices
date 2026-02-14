@@ -15,10 +15,17 @@
   font-family:'Poppins', sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:#0b1c2d;
   color:#ffffff;
   position:relative;
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory; /* 🔥 KEY LINE */
 }
 
 /* ===== BACKGROUND LOGO ===== */
@@ -34,11 +41,16 @@ body::before{
 
 /* ===== HEADER ===== */
 header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:10;
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:18px 10%;
-  background:rgba(11,28,45,0.9);
+  background:rgba(11,28,45,0.92);
 }
 
 header h1{
@@ -58,17 +70,21 @@ nav a:hover{opacity:1}
 
 /* ===== SECTIONS ===== */
 section{
-  padding:80px 10%;
+  height:100vh;                 /* ONE SCREEN */
+  scroll-snap-align:start;      /* SNAP POINT */
+  padding:110px 10% 80px;       /* header offset */
+  display:flex;
+  align-items:center;
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .container{
   max-width:1200px;
-  margin:auto;
 }
 
+/* ===== TEXT ===== */
 h2{
-  font-size:34px;
+  font-size:42px;
   margin-bottom:16px;
 }
 
@@ -78,24 +94,20 @@ p{
   line-height:1.7;
 }
 
-/* ===== HERO (REDUCED HEIGHT) ===== */
-.hero{
-  padding:70px 10% 80px;
-}
-
+/* ===== HERO ===== */
 .hero h2{
-  font-size:44px;
+  font-size:46px;
   max-width:720px;
 }
 
 /* ===== HERO VIDEO ===== */
 .hero-video{
-  margin-top:35px;
+  margin-top:30px;
   max-width:900px;
 }
 
-.hero-video video,
-.hero-video iframe{
+.hero-video iframe,
+.hero-video video{
   width:100%;
   border-radius:14px;
   box-shadow:0 20px 50px rgba(0,0,0,0.45);
@@ -116,36 +128,36 @@ p{
 }
 
 /* ===== TEAM ===== */
-.team-card h3{
-  margin-bottom:6px;
-}
-
 .team-card span{
   font-size:14px;
   opacity:0.75;
 }
 
-/* ===== MOBILE TUNING ===== */
+/* ===== MOBILE ===== */
 @media(max-width:768px){
-  .hero{
-    padding:55px 8% 65px;
+  section{
+    padding:95px 8% 60px;
+  }
+
+  h2{
+    font-size:30px;
   }
 
   .hero h2{
     font-size:32px;
   }
-
-  section{
-    padding:65px 8%;
-  }
 }
 
 /* ===== FOOTER ===== */
 footer{
-  padding:45px 10%;
+  height:100vh;
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
   background:rgba(11,28,45,0.95);
-  opacity:0.85;
+  opacity:0.9;
 }
 </style>
 </head>
@@ -162,7 +174,7 @@ footer{
   </nav>
 </header>
 
-<!-- 1 HOME / HERO -->
+<!-- 1 HERO -->
 <section id="home" class="hero">
   <div class="container">
     <h2>Marine & Construction Services Built on Experience and Integrity</h2>
@@ -170,17 +182,7 @@ footer{
       Delivering reliable marine, logistics, and project support services with a commitment to safety, quality, and operational excellence.
     </p>
 
-    <!-- HERO VIDEO -->
     <div class="hero-video">
-      <!-- OPTION A: Local MP4 -->
-      <!--
-      <video controls poster="logo.png">
-        <source src="hero-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      -->
-
-      <!-- OPTION B: YouTube / Vimeo -->
       <iframe
         src="https://www.youtube.com/embed/VIDEO_ID"
         frameborder="0"
