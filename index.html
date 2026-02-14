@@ -5,208 +5,110 @@
 <title>MTP Marine Services</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --royal:#0b3c5d;
+  --royal:#0b2a4a;
+  --white:#ffffff;
+  --gray:#f3f5f8;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:#111;}
 
-html,body{
-  scroll-snap-type:y mandatory;
-  overflow-y:scroll;
-}
-
-/* ===== HEADER (LOCKED) ===== */
 header{
   position:fixed;
-  top:0;
-  width:100%;
+  top:0;width:100%;
   background:var(--royal);
   z-index:1000;
 }
-
 nav{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:10px;
-  padding:15px 30px;
-  text-align:center;
+  max-width:1400px;
+  margin:auto;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-
 nav a{
-  color:white;
+  color:#fff;
+  margin-left:22px;
   text-decoration:none;
-  font-size:14px;
   font-weight:500;
 }
 
-/* ===== SECTIONS ===== */
 section{
-  min-height:100vh;
-  scroll-snap-align:start;
-  display:flex;
-  justify-content:center;
-  padding:120px 8% 60px;
+  padding:140px 10%;
 }
+h2{font-size:56px;margin-bottom:40px;}
+p{font-size:26px;line-height:1.8;max-width:1200px;}
 
-.section-inner{
-  max-width:1200px;
-  width:100%;
-  text-align:center;
+.hero{
+  padding-top:160px;
+  background:#fff;
 }
-
-/* Colors */
-.white{ background:white; color:var(--royal); }
-.blue{ background:var(--royal); color:white; }
-
-/* ===== LARGE TEXT ===== */
-section h1{ font-size:78px; }
-section h2{ font-size:60px; }
-section p{
-  font-size:28px;
-  line-height:2.3;
+.hero h1{
+  font-size:72px;
   max-width:1100px;
-  margin:40px auto;
 }
-
-/* ===== HERO ===== */
+.hero p{margin-top:30px;}
 .hero-media{
   margin-top:50px;
-  height:420px;
-  background:#e0e0e0;
-  border:3px dashed #999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  font-weight:600;
-  color:#555;
+  height:340px;
+  background:#e1e6ee;
+  border-radius:18px;
 }
 
-/* ===== SERVICES GRID ===== */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
-  margin-top:60px;
-}
+.alt{background:var(--gray);}
 
-.service-box{
-  font-size:28px;
-  padding:55px;
-  border-radius:12px;
-  font-weight:600;
-  text-decoration:none;
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .8s ease;
+#services{
+  background:var(--royal);
+  color:#fff;
 }
-
-.service-box.show{
-  opacity:1;
-  transform:translateY(0);
+.service{
+  margin-top:120px;
 }
-
-.white .service-box{
-  background:#f4f6f8;
-  color:var(--royal);
+.service h3{
+  font-size:46px;
+  margin-bottom:25px;
 }
-
-.blue .service-box{
-  background:rgba(255,255,255,0.15);
-  color:white;
-}
-
-/* ===== SERVICE DETAIL IMAGES ===== */
+.service p{color:#fff;}
 .service-images{
+  margin-top:40px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:60px;
-  margin-top:70px;
+  gap:30px;
+}
+.placeholder{
+  height:240px;
+  background:#e1e6ee;
+  border-radius:16px;
 }
 
-.null-image{
-  height:320px;
-  background:#e0e0e0;
-  border:3px dashed #999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:600;
-  color:#555;
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .9s ease;
-}
-
-.null-image.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ===== CERTIFICATES ===== */
-.certificates{
+.team-grid,.cert-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:40px;
-  margin-top:60px;
 }
-
-.cert{
-  height:110px;
-  background:#ddd;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  font-weight:600;
-  opacity:0;
-  transform:translateY(20px);
-  transition:all .8s ease;
-}
-
-.cert.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ===== SECTION FADE ===== */
-.fade-section{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 1s ease;
-}
-
-.fade-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ===== FOOTER ===== */
-footer{
-  background:white;
+.card{
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
   text-align:center;
-  padding:30px;
+}
+.card .photo{
+  height:220px;
+  background:#e1e6ee;
+  border-radius:16px;
+  margin-bottom:20px;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  nav{ grid-template-columns:repeat(3,1fr); }
-  section h1{ font-size:46px; }
-  section h2{ font-size:36px; }
-  section p{ font-size:22px; }
-  .hero-media{ height:260px; }
-  .service-images{ grid-template-columns:1fr; }
-  .null-image{ height:220px; }
+footer{
+  background:#fff;
+  padding:80px 10%;
+  text-align:center;
 }
 </style>
 </head>
@@ -215,117 +117,132 @@ footer{
 
 <header>
 <nav>
-<a href="#hero">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#marine">Marine</a>
-<a href="#civil">Civil</a>
-<a href="#mechanical">Mechanical</a>
-<a href="#electrical">Electrical</a>
-<a href="#hvac">HVAC</a>
-<a href="#rigging">Rigging</a>
-<a href="#fabrication">Fabrication</a>
-<a href="#certs">Certificates</a>
-<a href="#contact">Contact</a>
+  <strong style="color:#fff">MTP Marine Services</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 </header>
 
-<section id="hero" class="white fade-section">
-<div class="section-inner">
-<h1>MTP Marine Services</h1>
-<p>Integrated Marine and Industrial Solutions</p>
-<div class="hero-media">VIDEO PLACEHOLDER</div>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Integrated Marine, Construction & Industrial Services</h1>
+  <p>
+    Reliable marine works, fabrication, logistics, and technical services
+    delivered with discipline, safety, and accountability.
+  </p>
+  <div class="hero-media"></div>
 </section>
 
-<section id="about" class="blue fade-section">
-<div class="section-inner">
-<h2>About Us</h2>
-<p>
-MTP Marine Services delivers reliable marine, industrial, and engineering solutions
-supporting onshore and offshore projects with strict safety compliance.
-</p>
-</div>
+<!-- ABOUT -->
+<section id="about" class="alt">
+  <h2>About Us</h2>
+  <p>
+    MTP Marine Services provides end-to-end marine, fabrication, construction,
+    logistics, and industrial support services for offshore and land-based projects.
+  </p>
 </section>
 
-<section id="services" class="white fade-section">
-<div class="section-inner">
-<h2>Our Services</h2>
-<div class="services">
-<a href="#marine" class="service-box">Marine Works</a>
-<a href="#civil" class="service-box">Civil Works</a>
-<a href="#mechanical" class="service-box">Mechanical Works</a>
-<a href="#electrical" class="service-box">Electrical Works</a>
-<a href="#hvac" class="service-box">HVAC Systems</a>
-<a href="#rigging" class="service-box">Rigging & Lifting</a>
-<a href="#fabrication" class="service-box">Fabrication Works</a>
-<a href="#logistics" class="service-box">Land & Sea Logistics</a>
-</div>
-</div>
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+
+  <div class="service">
+    <h3>Marine Works</h3>
+    <p>Marine construction, vessel support, offshore and port operations.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Sea Transportation</h3>
+    <p>Marine logistics, barge operations, and sea-based hauling.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Land Transportation & Logistics</h3>
+    <p>Material hauling, equipment transport, and land logistics coordination.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Steel Fabrication</h3>
+    <p>Structural steel fabrication and industrial component manufacturing.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Mechanical Works</h3>
+    <p>Machinery installation, piping, and mechanical system maintenance.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Civil Works</h3>
+    <p>Concrete works, foundations, and structural construction.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Electrical Works</h3>
+    <p>Electrical installation, testing, and commissioning services.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>HVAC Systems</h3>
+    <p>Industrial and commercial HVAC installation and servicing.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Rigging Services</h3>
+    <p>Heavy lifting, load handling, and equipment positioning.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
+
+  <div class="service">
+    <h3>Scaffolding Services</h3>
+    <p>Supply, erection, and dismantling of scaffolding systems.</p>
+    <div class="service-images"><div class="placeholder"></div><div class="placeholder"></div></div>
+  </div>
 </section>
 
-<!-- SERVICE TEMPLATE -->
-<section id="marine" class="blue fade-section">
-<div class="section-inner">
-<h2>Marine Works</h2>
-<p>Comprehensive marine construction, vessel support, offshore logistics, and port assistance.</p>
-<div class="service-images">
-<div class="null-image">IMAGE</div>
-<div class="null-image">IMAGE</div>
-</div>
-</div>
+<!-- TEAM -->
+<section id="team" class="alt">
+  <h2>Our Team</h2>
+  <div class="team-grid">
+    <div class="card"><div class="photo"></div><p>Project Manager</p></div>
+    <div class="card"><div class="photo"></div><p>Marine Supervisor</p></div>
+    <div class="card"><div class="photo"></div><p>Engineering Lead</p></div>
+  </div>
 </section>
 
-<section id="civil" class="white fade-section">
-<div class="section-inner">
-<h2>Civil Works</h2>
-<p>Structural foundations, site development, and infrastructure construction.</p>
-<div class="service-images">
-<div class="null-image">IMAGE</div>
-<div class="null-image">IMAGE</div>
-</div>
-</div>
+<!-- CERTIFICATIONS -->
+<section>
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+    <div class="card"><div class="photo"></div><p>DOLE Compliance</p></div>
+    <div class="card"><div class="photo"></div><p>TESDA NC II</p></div>
+    <div class="card"><div class="photo"></div><p>Safety Certifications</p></div>
+  </div>
 </section>
 
-<section id="certs" class="white fade-section">
-<div class="section-inner">
-<h2>Certifications & Compliance</h2>
-<div class="certificates">
-<div class="cert">DOLE</div>
-<div class="cert">TESDA NC II</div>
-<div class="cert">Safety</div>
-<div class="cert">ISO</div>
-</div>
-</div>
-</section>
-
-<section id="contact" class="blue fade-section">
-<div class="section-inner">
-<h2>Contact Us</h2>
-<p>
-Brgy. New Danglayan, Bauan, Batangas<br>
-Email: info@mtpmarineservices.com
-</p>
-</div>
+<!-- CONTACT -->
+<section id="contact" class="alt">
+  <h2>Contact Us</h2>
+  <p>
+    Brgy. New Danglayan, Bauan, Batangas, Philippines<br>
+    info@mtpmarineservices.com
+  </p>
 </section>
 
 <footer>
-© 2026 MTP Marine Services. All Rights Reserved.
+  <p>© 2026 MTP Marine Services. All rights reserved.</p>
 </footer>
-
-<script>
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{ threshold:0.2 });
-
-document.querySelectorAll(
-  ".fade-section, .service-box, .null-image, .cert"
-).forEach(el=>observer.observe(el));
-</script>
 
 </body>
 </html>
