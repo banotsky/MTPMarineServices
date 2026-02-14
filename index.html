@@ -2,250 +2,123 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MTP Marine Services</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTP Marine Services</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --marine:#083a5c;        /* main background */
-  --marine-dark:#062a42;   /* footer / deep sections */
-  --marine-light:#0f4f7d;  /* gradients only */
-  --accent:#4fb3ff;        /* ONLY buttons / highlights */
-  --white:#ffffff;
-  --soft:#f2f6fa;          /* light sections */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:Poppins,Arial,sans-serif;
-  background:var(--marine);
-  color:#fff;
-  overflow-x:hidden;
+    background: url("assets/your-logo.png") no-repeat center center fixed;
+    background-size: cover;
+    color:white;
 }
 
-/* ================= TOP NAV (SAIPEM STYLE) ================= */
-header{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  background:rgba(6,42,66,0.95);
-  backdrop-filter:blur(6px);
-  z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.nav{
-  max-width:1400px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px 6%;
-}
-.nav .logo{
-  font-weight:700;
-  font-size:20px;
-  letter-spacing:1px;
-}
-.nav a{
-  color:#e6f2ff;
-  text-decoration:none;
-  margin-left:26px;
-  font-size:14px;
-  font-weight:500;
-}
-.nav a:hover{color:var(--accent)}
-
-/* Offset for fixed header */
-.spacer{height:90px}
-
-/* ================= HERO ================= */
-#hero{
-  min-height:100vh;
-  display:grid;
-  grid-template-columns:1.4fr 1fr;
-  align-items:center;
-
-  padding:0 8%;
-  gap:80px;
-
-  background:
-    linear-gradient(180deg,#0a1f33 0%, #071726 100%);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.hero-text h1{
-  font-size:60px;
-  font-weight:700;
-  line-height:1.1;
-}
-.hero-text p{
-  margin-top:18px;
-  font-size:18px;
-  color:#cfe6ff;
-}
-.hero-text a{
-  display:inline-block;
-  margin-top:26px;
-  padding:14px 28px;
-  background:var(--accent);
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  border-radius:4px;
-}
-.hero-media{
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:8px;
-  padding:120px 0;
-  text-align:center;
-  opacity:.7;
+.overlay{
+    background: rgba(0,0,20,0.75);
+    width:100%;
+    min-height:100vh;
 }
 
-/* ================= METRICS STRIP ================= */
-.metrics{
-  background:#f8f9fa;
-  color:#123;
-  display:flex;
-  justify-content:space-around;
-  padding:50px 10%;
-}
-.metric{text-align:center}
-.metric strong{font-size:32px}
-.metric span{display:block;font-size:13px;margin-top:6px}
+/* NAVIGATION */
 
-/* ================= SECTIONS ================= */
-section{
-  padding:110px 10%;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-}
-section.light{
-  background:var(--soft);
-  color:#123;
-}
-section.light h2{color:var(--marine)}
-section.light p{color:#345}
-
-h2{
-  font-size:34px;
-  margin-bottom:22px;
-}
-p{
-  max-width:900px;
-  line-height:1.8;
-  color:#dbeeff;
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 60px;
+    background:rgba(0,0,40,0.85);
+    backdrop-filter: blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
 }
 
-/* ================= GRID ================= */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
-}
-.card{
-  padding:28px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-}
-section.light .card{
-  background:#fff;
-  border:1px solid #ddd;
+nav h2{
+    font-weight:600;
+    letter-spacing:2px;
 }
 
-/* ================= MEDIA ================= */
-.media{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
-.placeholder{
-  padding:120px 0;
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:6px;
-  text-align:center;
-  opacity:.6;
-}
-section.light .placeholder{
-  border-color:#ccc;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
 }
 
-/* ================= FOOTER ================= */
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav ul li a:hover{
+    color:#00bfff;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:52px;
+    font-weight:700;
+}
+
+.hero p{
+    margin-top:20px;
+    max-width:700px;
+    font-size:18px;
+}
+
+/* SECTIONS */
+
+.section{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.section h2{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.section p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.7;
+}
+
+.box{
+    background: rgba(255,255,255,0.08);
+    padding:40px;
+    border-radius:12px;
+    backdrop-filter: blur(6px);
+}
+
+/* FOOTER */
+
 footer{
-  background:var(--marine-dark);
-  padding:40px;
-  text-align:center;
-  color:#cfe6ff;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  #hero{grid-template-columns:1fr;text-align:center}
-  .media{grid-template-columns:1fr}
-  .metrics{flex-direction:column;gap:24px}
-}
-
-/* ================= TOP HEADER ================= */
-
-.top-header{
-  width:100%;
-  background:linear-gradient(90deg,#062a42,#083a5c);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  position:sticky;
-  top:0;
-  z-index:1200;
-}
-
-.header-inner{
-  max-width:1400px;   /* controls content width */
-  margin:0 auto;
-  padding:18px 10%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.logo{
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:1px;
-  color:#ffffff;
-}
-
-.top-nav{
-  display:flex;
-  gap:28px;
-}
-
-.top-nav a{
-  color:#e6f2ff;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:500;
-  position:relative;
-}
-
-.top-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:2px;
-  background:var(--accent);
-  transition:0.3s ease;
-}
-
-.top-nav a:hover::after{
-  width:100%;
-}
-
-/* Mobile */
-@media(max-width:900px){
-  .top-nav{
-    display:none;
-  }
+    padding:40px;
+    text-align:center;
+    background:rgba(0,0,40,0.9);
 }
 
 </style>
@@ -253,133 +126,153 @@ footer{
 
 <body>
 
-<header class="top-header">
-  <div class="header-inner">
-    <div class="logo">MTP MARINE SERVICES</div>
+<div class="overlay">
 
-    <nav class="top-nav">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#marine">Marine</a>
-      <a href="#land">Land</a>
-      <a href="#equipment">Equipment</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-
-<div class="spacer"></div>
+<nav>
+    <h2>MTP Marine</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#erp">ERP</a></li>
+        <li><a href="#fleet">Fleet</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
 <!-- SECTION 1 -->
-<section id="hero">
-  <div class="hero-text">
-    <h1>Engineering Reliable Marine & Industrial Solutions</h1>
-    <p>Marine • Land • Industrial Engineering Excellence</p>
-    <a href="#about">Discover More</a>
-  </div>
-  <div class="hero-media">HERO VIDEO / IMAGE</div>
+<section class="hero">
+    <h1>MTP Marine Services</h1>
+    <p>Integrated Marine Engineering, Fleet Operations, and ERP-Driven Project Management</p>
 </section>
 
 <!-- SECTION 2 -->
-<section class="metrics">
-  <div class="metric"><strong>10+</strong><span>Years in Operation</span></div>
-  <div class="metric"><strong>120+</strong><span>Projects Completed</span></div>
-  <div class="metric"><strong>40+</strong><span>Active Equipment</span></div>
-  <div class="metric"><strong>0</strong><span>Major Incidents</span></div>
+<section class="section" id="about">
+    <div class="box">
+        <h2>1. Corporate Overview</h2>
+        <p>
+        Located in Brgy. New Danglayan, Bauan, Batangas, MTP Marine Services
+        delivers engineering, fabrication, marine repair, and fleet-managed
+        project execution supported by an integrated ERP system.
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 3 -->
-<section id="why-us">
-  <h2>Why Choose MTP</h2>
-  <div class="grid">
-    <div class="card">Engineering Expertise</div>
-    <div class="card">Safety-First Culture</div>
-    <div class="card">Reliable Execution</div>
-  </div>
+<section class="section">
+    <div class="box">
+        <h2>2. Mission & Vision</h2>
+        <p>
+        To provide reliable marine and industrial services powered by
+        real-time financial monitoring, fleet automation, and data-driven decisions.
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 4 -->
-<section id="safety" class="light">
-  <h2>Safety & Quality</h2>
-  <div class="grid">
-    <div class="card">Zero Accident Target</div>
-    <div class="card">Certified Equipment</div>
-    <div class="card">Routine Audits</div>
-    <div class="card">Operational Discipline</div>
-  </div>
+<section class="section" id="services">
+    <div class="box">
+        <h2>3. Core Services</h2>
+        <p>
+        Ship Repair • Mechanical Works • Fabrication • Industrial Projects •
+        Fleet Logistics • Supplier Coordination
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 5 -->
-<section id="team">
-  <h2>Our Team</h2>
-  <div class="grid">
-    <div class="card">Marine Engineers</div>
-    <div class="card">Operators</div>
-    <div class="card">Safety Officers</div>
-    <div class="card">Supervisors</div>
-  </div>
+<section class="section">
+    <div class="box">
+        <h2>4. Project Management System</h2>
+        <p>
+        Full budget allocation, expense tracking per invoice, CEO/Manager oversight,
+        and real-time project profitability monitoring.
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 6 -->
-<section id="about" class="light">
-  <h2>About Us</h2>
-  <p>MTP Marine Services delivers integrated marine and industrial engineering solutions in the Philippines.</p>
+<section class="section">
+    <div class="box">
+        <h2>5. Financial Monitoring</h2>
+        <p>
+        Invoice-based expense recording, tax/non-tax classification,
+        quantity/unit price tracking, and automatic budget summaries.
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 7 -->
-<section id="marine">
-  <div class="media">
-    <div>
-      <h2>Marine Services</h2>
-      <p>Offshore support, vessel operations, and marine construction.</p>
+<section class="section" id="fleet">
+    <div class="box">
+        <h2>6. Fleet Management Division</h2>
+        <p>
+        GPS live tracking, geofence-based auto charging, after-hours driver charging,
+        project/supplier classification, and audit logging.
+        </p>
     </div>
-    <div class="placeholder">MARINE OPERATIONS</div>
-  </div>
 </section>
 
 <!-- SECTION 8 -->
-<section id="land" class="light">
-  <div class="media">
-    <div class="placeholder">LAND OPERATIONS</div>
-    <div>
-      <h2>Land & Industrial</h2>
-      <p>Construction support, logistics, and industrial operations.</p>
+<section class="section">
+    <div class="box">
+        <h2>7. Bidding & Cost Estimation</h2>
+        <p>
+        Historical usage analytics, material consumption forecasting,
+        labor tracking, and profitability simulation for future tenders.
+        </p>
     </div>
-  </div>
 </section>
 
 <!-- SECTION 9 -->
-<section id="equipment">
-  <h2>Equipment & Capabilities</h2>
-  <div class="grid">
-    <div class="card">Marine Vessels</div>
-    <div class="card">Heavy Equipment</div>
-    <div class="card">Certified Tools</div>
-    <div class="card">Logistics Assets</div>
-  </div>
+<section class="section">
+    <div class="box">
+        <h2>8. Role-Based ERP Access</h2>
+        <p>
+        CEO Dashboard • Manager Controls • Expediter Expense Control •
+        Controlled editing with full audit trail.
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 10 -->
-<section id="projects" class="light">
-  <h2>Projects & Experience</h2>
-  <div class="grid">
-    <div class="card">Offshore Support</div>
-    <div class="card">Port Works</div>
-    <div class="card">Industrial Facilities</div>
-  </div>
+<section class="section">
+    <div class="box">
+        <h2>9. Automation & Controls</h2>
+        <p>
+        Auto budget computation, supplier visit tagging,
+        working hours rule (7AM–6PM), emergency override approval workflow.
+        </p>
+    </div>
 </section>
 
 <!-- SECTION 11 -->
-<section id="contact" class="light">
-  <h2>Contact</h2>
-  <p>📍 Brgy. New Danglayan, Bauan, Batangas, Philippines</p>
+<section class="section">
+    <div class="box">
+        <h2>10. Data & Cloud Infrastructure</h2>
+        <p>
+        Supabase-powered cloud database integration with secure login,
+        real-time synchronization, and scalable storage architecture.
+        </p>
+    </div>
+</section>
+
+<!-- SECTION 12 -->
+<section class="section" id="contact">
+    <div class="box">
+        <h2>11. Contact & Location</h2>
+        <p>
+        MTP Marine Services<br>
+        Brgy. New Danglayan, Bauan, Batangas, Philippines<br>
+        Email: info@mtpmarine.com
+        </p>
+    </div>
 </section>
 
 <footer>
-© 2026 MTP Marine Services
+© 2026 MTP Marine Services. All Rights Reserved.
 </footer>
+
+</div>
 
 </body>
 </html>
