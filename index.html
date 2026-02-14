@@ -2,276 +2,259 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MTP Marine Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
+/* ===== RESET ===== */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
 
 body{
-    background: url("logo.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color:white;
+  background:#0b1c2d;
+  color:#fff;
+  position:relative;
 }
 
-/* Overlay */
-.overlay{
-    background: rgba(0,0,30,0.82);
-    width:100%;
+/* ===== LOGO BACKGROUND ===== */
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url("logo.png") no-repeat center center;
+  background-size:contain; /* FULL VISIBILITY */
+  opacity:0.12;           /* DOES NOT BLOCK TEXT */
+  z-index:-1;
+  pointer-events:none;
 }
 
-/* Navbar */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:20px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,40,0.90);
-    backdrop-filter:blur(8px);
-    z-index:1000;
+/* ===== GLOBAL LAYOUT ===== */
+section{
+  padding:80px 10%;
+  border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-nav h2{
-    font-weight:600;
-    letter-spacing:2px;
+h1,h2,h3{
+  margin-bottom:16px;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
+p{
+  opacity:0.9;
+  line-height:1.6;
 }
 
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
+.container{
+  max-width:1200px;
+  margin:auto;
 }
 
-nav ul li a:hover{
-    color:#00bfff;
+/* ===== HEADER ===== */
+header{
+  padding:25px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(11,28,45,0.85);
+  backdrop-filter:blur(4px);
 }
 
-/* Hero */
+header h1{
+  font-size:22px;
+  font-weight:600;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:25px;
+  font-weight:500;
+  opacity:0.9;
+}
+
+nav a:hover{
+  opacity:1;
+}
+
+/* ===== HERO ===== */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+  min-height:85vh;
+  display:flex;
+  align-items:center;
 }
 
 .hero h1{
-    font-size:58px;
+  font-size:48px;
+  max-width:700px;
 }
 
 .hero p{
-    margin-top:20px;
-    max-width:800px;
-    font-size:20px;
+  margin-top:15px;
+  max-width:600px;
 }
 
-/* Sections */
-.section{
-    padding:140px 20px 100px 20px;
-    text-align:center;
-}
-
-.section h2{
-    font-size:36px;
-    margin-bottom:25px;
-}
-
-.section p{
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
+/* ===== CARD GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
 }
 
 .card{
-    background: rgba(255,255,255,0.08);
-    padding:50px;
-    border-radius:14px;
-    backdrop-filter: blur(6px);
+  background:rgba(255,255,255,0.06);
+  padding:25px;
+  border-radius:12px;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer{
-    background:rgba(0,0,40,0.95);
-    padding:40px;
-    text-align:center;
+  padding:40px 10%;
+  text-align:center;
+  background:rgba(11,28,45,0.9);
+  opacity:0.85;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>MTP Marine Services</h1>
+  <nav>
+    <a href="#s1">Home</a>
+    <a href="#s4">ERP</a>
+    <a href="#s8">Fleet</a>
+    <a href="#s11">Contact</a>
+  </nav>
+</header>
 
-<nav>
-    <h2>MTP Marine</h2>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>MTP Marine Services</h1>
+<!-- ===== SECTION 1 ===== -->
+<section id="s1" class="hero">
+  <div class="container">
+    <h1>Integrated ERP, Fleet & Financial Intelligence Platform</h1>
     <p>
-        Marine Engineering • Industrial Fabrication •
-        Fleet Operations • Structured Project Monitoring
+      One system. Full visibility. Real-time cost, project, and fleet control for marine and construction operations.
     </p>
+  </div>
 </section>
 
-<!-- 1 ABOUT -->
-<section class="section" id="about">
+<!-- ===== SECTION 2 ===== -->
+<section id="s2">
+  <div class="container">
+    <h2>Company Overview</h2>
+    <p>MTP Marine Services operates with precision-driven systems for cost, fleet, and operational excellence.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 3 ===== -->
+<section id="s3">
+  <div class="container grid">
     <div class="card">
-        <h2>1. About Us</h2>
-        <p>
-        MTP Marine Services is based in Bauan, Batangas,
-        providing engineering, ship repair, fabrication,
-        and project-based industrial services.
-        </p>
+      <h3>Mission</h3>
+      <p>Deliver transparent, data-driven operations.</p>
     </div>
-</section>
-
-<!-- 2 WHY US -->
-<section class="section" id="why">
     <div class="card">
-        <h2>2. Why Choose Us</h2>
-        <p>
-        Strong operational discipline, structured cost monitoring,
-        fleet management oversight, and commitment to project efficiency.
-        </p>
+      <h3>Vision</h3>
+      <p>Be the benchmark in integrated marine ERP systems.</p>
     </div>
+  </div>
 </section>
 
-<!-- 3 SERVICES -->
-<section class="section" id="services">
+<!-- ===== SECTION 4 ===== -->
+<section id="s4">
+  <div class="container">
+    <h2>ERP Core System</h2>
+    <p>Project costing, approvals, audit trail, and real-time dashboards.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 5 ===== -->
+<section id="s5">
+  <div class="container grid">
     <div class="card">
-        <h2>3. Core Services</h2>
-        <p>
-        Ship Repair • Mechanical Works • Fabrication •
-        Industrial Installations • Marine Engineering
-        </p>
+      <h3>Project Monitoring</h3>
+      <p>Budget vs actual tracking in real time.</p>
     </div>
-</section>
-
-<!-- 4 PROJECT MANAGEMENT -->
-<section class="section">
     <div class="card">
-        <h2>4. Project Management</h2>
-        <p>
-        Budget allocation, expense tracking per invoice,
-        profitability monitoring, and cost visibility.
-        </p>
+      <h3>Expense Control</h3>
+      <p>Invoice-level precision and approvals.</p>
     </div>
+  </div>
 </section>
 
-<!-- 5 FINANCIAL -->
-<section class="section">
+<!-- ===== SECTION 6 ===== -->
+<section id="s6">
+  <div class="container">
+    <h2>Financial Management</h2>
+    <p>Tax, non-tax, liquidation, and audit-ready records.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 7 ===== -->
+<section id="s7">
+  <div class="container grid">
     <div class="card">
-        <h2>5. Financial Control</h2>
-        <p>
-        Invoice-based expense entry, quantity & unit price monitoring,
-        and budget summary tracking.
-        </p>
+      <h3>Cash Flow</h3>
+      <p>Real-time visibility on inflow and outflow.</p>
     </div>
-</section>
-
-<!-- 6 FLEET -->
-<section class="section">
     <div class="card">
-        <h2>6. Fleet Division</h2>
-        <p>
-        Vehicle allocation, fuel usage tracking,
-        supplier visit monitoring, and operational logging.
-        </p>
+      <h3>Budget Forecasting</h3>
+      <p>Bid-ready and execution-ready projections.</p>
     </div>
+  </div>
 </section>
 
-<!-- 7 BIDDING -->
-<section class="section">
+<!-- ===== SECTION 8 ===== -->
+<section id="s8">
+  <div class="container">
+    <h2>Fleet Management</h2>
+    <p>GPS-based trip allocation, geofencing, and cost attribution.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 9 ===== -->
+<section id="s9">
+  <div class="container grid">
     <div class="card">
-        <h2>7. Bidding Support</h2>
-        <p>
-        Historical cost reference, material estimation,
-        labor forecasting, and profitability planning.
-        </p>
+      <h3>Fuel Analytics</h3>
+      <p>Automated fuel and usage tracking.</p>
     </div>
-</section>
-
-<!-- 8 ORGANIZATION -->
-<section class="section">
     <div class="card">
-        <h2>8. Organizational Roles</h2>
-        <p>
-        Executive oversight, managerial controls,
-        and structured operational accountability.
-        </p>
+      <h3>Driver Accountability</h3>
+      <p>After-hours and exception-based charging.</p>
     </div>
+  </div>
 </section>
 
-<!-- 9 CONTROLS -->
-<section class="section">
-    <div class="card">
-        <h2>9. Operational Controls</h2>
-        <p>
-        Work-hour discipline, approval workflows,
-        and project-based classification.
-        </p>
-    </div>
+<!-- ===== SECTION 10 ===== -->
+<section id="s10">
+  <div class="container">
+    <h2>Reports & Oversight</h2>
+    <p>CEO, Manager, and Auditor-ready reporting structure.</p>
+  </div>
 </section>
 
-<!-- 10 DIGITAL -->
-<section class="section">
-    <div class="card">
-        <h2>10. Digital Monitoring</h2>
-        <p>
-        Web-based monitoring framework designed for
-        executive transparency and operational clarity.
-        </p>
-    </div>
+<!-- ===== SECTION 11 ===== -->
+<section id="s11">
+  <div class="container">
+    <h2>Contact & Deployment</h2>
+    <p>Cloud-ready, LAN-capable, scalable ERP platform.</p>
+  </div>
 </section>
 
-<!-- 11 CONTACT -->
-<section class="section" id="contact">
-    <div class="card">
-        <h2>11. Contact</h2>
-        <p>
-        Brgy. New Danglayan, Bauan, Batangas<br>
-        Philippines
-        </p>
-    </div>
-</section>
-
+<!-- ===== FOOTER ===== -->
 <footer>
-© 2026 MTP Marine Services
+  © 2026 MTP Marine Services. All rights reserved.
 </footer>
-
-</div>
 
 </body>
 </html>
